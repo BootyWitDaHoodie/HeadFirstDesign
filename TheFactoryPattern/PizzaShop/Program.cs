@@ -1,4 +1,5 @@
 ﻿using System;
+using PizzaShop.California;
 
 namespace PizzaShop
 {
@@ -26,50 +27,50 @@ namespace PizzaShop
         }
     }
 
-    //public class SimplePizzaFactory
+    //public interface PizzaIngredientFactory
     //{
-    //    // 1 job: creating pizza for its clients
-    //    public Pizza CreatePizza(string pizzaType)
-    //    {
-    //        Pizza pizza = null;
-
-    //        if (pizzaType.Equals("cheese"))
-    //        {
-    //            pizza = new CheesePizza();
-    //        }
-    //        else if (pizzaType.Equals("pepperoni"))
-    //        {
-    //            pizza = new PepperoniPizza();
-    //        }
-    //        else if (pizzaType.Equals("veggie"))
-    //        {
-    //            pizza = new VeggiePizza();
-    //        }
-
-    //        return Pizza;
-    //    }
-    //}
-    // OLD PIZZASTORE
-    //public class PizzaStore // the client of the factory
-    //{
-    //    SimplePizzaFactory factory;
-
-    //    public PizzaStore(SimplePizzaFactory factory)
-    //    {
-    //        this.factory = factory;
-    //    }
-
-    //    public Pizza orderPizza(string pizzaType)
-    //    {
-    //        Pizza pizza;
-    //        pizza = factory.CreatePizza(pizzaType);
-    //        pizza.Prepare();
-    //        pizza.Bake();
-    //        pizza.Cut();
-    //        pizza.Box();
-    //        return pizza;
-    //    }
+    //    abstract Dough CreateDough();
+    //    abstract Sauce CreateSauce();
+    //    abstract Cheese CreateCheese();
+    //    abstract Veggies[] CreateVeggies();
+    //    abstract Pepperoni CreatePepperoni();
+    //    abstract Clams CreateClam();
     //}
 
-    // NEW PIZZASTORE
+    //public class NYPizzaIngredientFactory : PizzaIngredientFactory
+    //{
+    //    public Dough CreateDough()
+    //    {
+    //        return new ThinCrustDough();
+    //    }
+
+    //    public Sauce CreateSauce()
+    //    {
+    //        return new MarinaraSauce();
+    //    }
+
+    //    public Cheese CreateCheese()
+    //    {
+    //        return new ReggianoCheese();
+    //    }
+
+    //    public Veggies[] CreateVeggies()
+    //    {
+    //        Veggies veggies[] = {
+    //            new Garlic(), new Onion(), new Mushroom(), new RedPepper()
+    //        }
+    //        ;
+    //        return veggies;
+    //    }
+
+    //    public Pepperoni CreatePepperoni()
+    //    {
+    //        return new SlicedPepperoni();
+    //    }
+
+    //    public Clams createClams()
+    //    {
+    //        return new FreshClams();
+    //    }
+    //}
 }
