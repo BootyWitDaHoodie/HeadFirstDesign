@@ -48,7 +48,9 @@ namespace ChocolateFactory
                 // fill the boiler with a milk/chocolate mixture
             }
         }
-
+        /// <summary>
+        /// Drainnnnn
+        /// </summary>
         public void Drain()
         {
             if (!IsEmpty() && IsBoiled())
