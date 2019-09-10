@@ -7,6 +7,9 @@ namespace ChocolateFactory
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            ChocolateBoiler chocolateBoiler = ChocolateBoiler.GetChocolateBoiler();
+            chocolateBoiler.Fill();
+            chocolateBoiler.Drain();
         }
     }
 
@@ -15,6 +18,7 @@ namespace ChocolateFactory
         private bool _empty;
         private bool _boiled;
         private static ChocolateBoiler _chocolateBoiler;
+        private static readonly object padlock = new object();
 
         private ChocolateBoiler()
         {
@@ -24,12 +28,15 @@ namespace ChocolateFactory
 
         public static ChocolateBoiler GetChocolateBoiler()
         {
-            if (_chocolateBoiler == null)
+            lock (padlock)
             {
-                _chocolateBoiler = new ChocolateBoiler();
-            }
+                if (_chocolateBoiler == null)
+                {
+                    _chocolateBoiler = new ChocolateBoiler();
+                }
 
-            return _chocolateBoiler;
+                return _chocolateBoiler;
+            }
         }
 
         public void Fill()
